@@ -6,7 +6,7 @@ file = os.listdir("test")
 url = "192.168.50.190"
 cookies = ""
 
-for i in range(0, (len(file) + 1)):
+for i in range(0, len(file)):
     post_header = {
         "Host": url,
         "Content-Length": "1126",
