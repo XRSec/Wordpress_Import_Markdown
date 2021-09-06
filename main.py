@@ -23,6 +23,6 @@ for i in range(0,335):
         "Cookie": "",
         "Connection": "close"
     }
-    post_data= "------WebKitFormBoundary8MstAugNdsBBigBm\nContent-Disposition: form-data; name=\"file_to_upload\"; filename=\"" + file[i] + "\"\nContent-Type: text/markdown\n" + (open(os.getcwd() + "/test/" + file[i],"r",encoding="utf-8").read()) + "\nUpload file and import\n------WebKitFormBoundary8MstAugNdsBBigBm--"
+    post_data= "------WebKitFormBoundary8MstAugNdsBBigBm\nContent-Disposition: form-data; name=\"file_to_upload\"; filename=\"" + file[i] + "\"\nContent-Type: text/markdown\n" + (open(os.getcwd() + "/test/" + file[i],"r",encoding="utf-8").read()) + "\n------WebKitFormBoundary8MstAugNdsBBigBm--"
     post_data = post_data.encode("utf-8")
     print(file[i] , requests.post("http://url/wp-admin/admin.php?page=daimma-import", headers=post_header, data=post_data).status_code)
