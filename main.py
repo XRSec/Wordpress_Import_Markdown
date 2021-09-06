@@ -6,7 +6,7 @@ file = os.listdir("test")
 url = "192.168.50.190"
 cookies = ""
 
-for i in range(0, 335):
+for i in range(0, (len(file) + 1)):
     post_header = {
         "Host": url,
         "Content-Length": "1126",
@@ -28,4 +28,4 @@ for i in range(0, 335):
                                                                       encoding="utf-8").read()) + "\n------WebKitFormBoundary8MstAugNdsBBigBm--"
     post_data = post_data.encode("utf-8")
     print(file[i], requests.post("http://" + url + "/wp-admin/admin.php?page=daimma-import", headers=post_header,
-                                 data=post_data).status_code)
+                                 data=post_data).status_code,i)
