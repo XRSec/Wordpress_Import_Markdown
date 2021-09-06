@@ -29,4 +29,3 @@ for i in range(0, 335):
     post_data = post_data.encode("utf-8")
     print(file[i], requests.post("http://" + url + "/wp-admin/admin.php?page=daimma-import", headers=post_header,
                                  data=post_data).status_code)
-    exit()
