@@ -8,10 +8,10 @@ cookies = ""
 
 for i in range(0, 335):
     post_header = {
-        "Host": "\"" + url + "\"",
+        "Host": url,
         "Content-Length": "1126",
         "Cache-Control": "max-age=0",
-        "Origin": "http://" + url + "\"",
+        "Origin": "http://" + url,
         "Upgrade-Insecure-Requests": "1",
         "DNT": "1",
         "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundary8MstAugNdsBBigBm",
@@ -20,7 +20,7 @@ for i in range(0, 335):
         "Referer": "http://url/wp-admin/admin.php?page=daimma-import",
         "Accept-Encoding": "gzip, deflate",
         "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-        "Cookie": "\"" + cookies + "\"",
+        "Cookie": cookies,
         "Connection": "close"
     }
     post_data = "------WebKitFormBoundary8MstAugNdsBBigBm\nContent-Disposition: form-data; name=\"file_to_upload\"; filename=\"" + \
@@ -29,3 +29,4 @@ for i in range(0, 335):
     post_data = post_data.encode("utf-8")
     print(file[i], requests.post("http://" + url + "/wp-admin/admin.php?page=daimma-import", headers=post_header,
                                  data=post_data).status_code)
+    exit()
